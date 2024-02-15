@@ -2,11 +2,18 @@ package models;
 
 public class Nutrition {
     private int calories;
-    private String fat;
-    private String carbohydrates;
-    private String protein;
+    private int fat;
+    private int carbohydrates;
+    private int protein;
 
-    public Nutrition(int calories, String fat, String carbohydrates, String protein) {
+    public Nutrition() {
+        this.calories = 0;
+        this.fat = 0;
+        this.carbohydrates = 0;
+        this.protein = 0;
+    }
+
+    public Nutrition(int calories, int fat, int carbohydrates, int protein) {
         this.calories = calories;
         this.fat = fat;
         this.carbohydrates = carbohydrates;
@@ -21,27 +28,27 @@ public class Nutrition {
         this.calories = calories;
     }
 
-    public String getFat() {
+    public int getFat() {
         return fat;
     }
 
-    public void setFat(String fat) {
+    public void setFat(int fat) {
         this.fat = fat;
     }
 
-    public String getCarbohydrates() {
+    public int getCarbohydrates() {
         return carbohydrates;
     }
 
-    public void setCarbohydrates(String carbohydrates) {
+    public void setCarbohydrates(int carbohydrates) {
         this.carbohydrates = carbohydrates;
     }
 
-    public String getProtein() {
+    public int getProtein() {
         return protein;
     }
 
-    public void setProtein(String protein) {
+    public void setProtein(int protein) {
         this.protein = protein;
     }
 
@@ -64,6 +71,7 @@ public class Nutrition {
             return false;
         }
         Nutrition nutrition = (Nutrition) obj;
-        return calories == nutrition.calories && fat.equals(nutrition.fat) && carbohydrates.equals(nutrition.carbohydrates) && protein.equals(nutrition.protein);
+        return calories == nutrition.calories && fat == nutrition.fat && carbohydrates == nutrition.carbohydrates && protein == nutrition.protein;
     }
+
 }
