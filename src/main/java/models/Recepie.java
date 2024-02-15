@@ -13,4 +13,39 @@ public class Recepie {
     private String relatedRecepieId;
     private String relatedRecepieDesc;
 
+    public String getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public List<String> getPreparationSteps() {
+        return preparationSteps;
+    }
+
+    public List<String> getComments() {
+        return comments;
+    }
+
+    public Nutrition getNutrition() {
+        return nutrition;
+    }
+
+    public String getRelatedRecepieId() {
+        return relatedRecepieId;
+    }
+
+    public String getRelatedRecepieDesc() {
+        return relatedRecepieDesc;
+    }
 }
