@@ -26,6 +26,7 @@ public class Recepie {
         this.relatedRecepieDesc = relatedRecepieDesc;
     }
 
+
     public String getId() {
         return id;
     }
@@ -61,6 +62,7 @@ public class Recepie {
     public List<String> getPreparationSteps() {
         return preparationSteps;
     }
+
 
     public void setPreparationSteps(List<String> preparationSteps) {
         this.preparationSteps = preparationSteps;
@@ -99,7 +101,7 @@ public class Recepie {
     }
 
     @Override
-    public Boolean equals(Object obj) {
+    public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
