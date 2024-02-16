@@ -9,7 +9,8 @@ public class Main {
         recepieRepo.init();
         //Test zuppa
         //Retourner la liste des titres des ingrédients
-        recepieRepo.getRecipesByPreparationStep();
+        System.out.println(recepieRepo.getRecipesByPreparationStep());;
+
 
 
     }
