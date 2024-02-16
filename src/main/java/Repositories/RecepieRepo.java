@@ -42,7 +42,11 @@ public class RecepieRepo {
      *    Le nombre total d’œufs utilisés
      */
     public int getTotalEggsUsed(){
-        return this.recipes.stream().map(Recepie::getIngredients).flatMap(List::stream).filter(ingredient -> ingredient.getName().contains("eggs") || ingredient.getName().startsWith("egg")).mapToInt(ingredient -> (int) ingredient.getAmount()).sum();
+        return this.recipes.stream()
+                .map(Recepie::getIngredients)
+                .flatMap(List::stream)
+                .filter(ingredient -> ingredient.getName().contains("eggs") || ingredient.getName().startsWith("egg"))
+                .mapToInt(ingredient -> (int) ingredient.getAmount()).sum();
     }
 
     /**
@@ -51,7 +55,10 @@ public class RecepieRepo {
      *     La liste des titres des recettes utilisant l’huile d’olive
      */
     public List<String> getRecipesUsingOliveOil(){
-        return this.recipes.stream().filter(recepie -> recepie.getIngredients().stream().anyMatch(ingredient -> ingredient.getName().equals("olive oil"))).map(Recepie::getTitle).toList();
+        return this.recipes.stream()
+                .filter(recepie -> recepie.getIngredients()
+                        .stream().anyMatch(ingredient -> ingredient.getName()
+                                .equals("olive oil"))).map(Recepie::getTitle).toList();
     }
 
     /**
@@ -315,7 +322,7 @@ public class RecepieRepo {
     }
 
 
-    public List<Recepie> getAllRecipes() {
+    public List<Recepie> getAllRecepies() {
         return recipes;
     }
 
