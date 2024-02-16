@@ -213,24 +213,22 @@ public class RecepieRepo {
     }
 
     /**
-     * Calculer la répartition des recettes par étape de réalisation
+     * Calculer la répartition des recettes par étape de réalisation (Combien de recette necessite une étape donnée)
+     * Retourne toutes les etapes de preparation associées à une recette
      */
-    public void getRecipesByPreparationStep() {
-        Map<String, List<Recepie>> recipesByPreparationStep = recipes.stream()
-                .flatMap(recipe -> recipe.getPreparationSteps().stream())
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.mapping(recipe -> recipes.stream()
-                        .filter(r -> r.getPreparationSteps().contains(recipe))
-                        .findFirst()
-                        .orElse(null), Collectors.toList())));
-
-        recipesByPreparationStep.forEach((step, stepRecipes) -> {
-            System.out.println(step + " : " + stepRecipes.stream()
-                    .filter(recipe -> recipe != null)
-                    .map(Recepie::getTitle)
-                    .collect(Collectors.joining(", ")));
-        });
+    public Map<String , List<String>> getRecipesByPreparationStep() {
+        // Merge all preparation that have the same recipe title
+        Map<String, List<String>> recipesByPreparationStep = recipes.stream()
+                .collect(Collectors.toMap(Recepie::getTitle, Recepie::getPreparationSteps, (preparation1, preparation2) -> {
+                    List<String> mergedPreparation = new ArrayList<>(preparation1);
+                    mergedPreparation.addAll(preparation2);
+                    return mergedPreparation;
+                }));
+        //        recipesByPreparationStep.forEach((title, preparationSteps) -> {
+        //            System.out.println(title + " : " + preparationSteps.stream().collect(Collectors.joining(", ")));
+        //        });
+        return recipesByPreparationStep;
     }
-
     /**
      * Calcule la recette la plus facile (avec le moins d’étape)
      */
