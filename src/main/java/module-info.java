@@ -1,4 +1,4 @@
-module app.recettes {
+module Presentation {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -8,6 +8,6 @@ module app.recettes {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens app.recettes to javafx.fxml;
-    exports app.recettes;
+    opens  Presentation to javafx.fxml;
+    exports Presentation;
 }

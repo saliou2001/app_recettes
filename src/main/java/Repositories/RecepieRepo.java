@@ -121,7 +121,6 @@ public class RecepieRepo {
     private boolean hasCommonIngredients(Recepie recipe, List<Ingredient> commonIngredients) {
         List<Ingredient> ingredients = recipe.getIngredients();
 
-        // Check if any ingredient in the recipe is present in the commonIngredients list
         return ingredients.stream()
                 .anyMatch(ingredient -> commonIngredients.stream()
                         .anyMatch(commonIngredient -> commonIngredient.getName().equalsIgnoreCase(ingredient.getName())));
