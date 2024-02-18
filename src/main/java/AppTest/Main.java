@@ -22,8 +22,7 @@ public class Main {
                 MenuTextuel.main(null); // Appeler la classe MenuTextuel
                 break;
             case 2:
-
-                System.out.println("menu graphique");
+                MenuGraphique.launch(MenuGraphique.class, args); // Appeler la classe MenuGraphique
                 break;
             default:
                 System.out.println("Choix invalide !");

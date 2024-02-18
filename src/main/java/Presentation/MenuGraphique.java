@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.util.Objects;
 
@@ -12,7 +13,11 @@ public class MenuGraphique extends Application{
         System.out.println();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("MenuGraphique.fxml")));
         primaryStage.setTitle("Menu");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        //style
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setMinWidth(900);
+        primaryStage.setMinHeight(600);
         primaryStage.show();
     }
     public static void main(String[] args) {

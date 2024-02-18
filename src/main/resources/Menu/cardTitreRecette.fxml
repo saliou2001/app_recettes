@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox fx:id="cardTitre" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="290.0" style="-fx-border-width: 3; -fx-border-radius: 10;" styleClass="card" stylesheets="@../css/base.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="145.0" prefWidth="400.0">
+         <children>
+            <ImageView fitHeight="178.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/rico-pi.jpg" />
+               </image>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+         <VBox.margin>
+            <Insets left="50.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="88.0" prefWidth="269.0">
+         <children>
+            <Label fx:id="titreLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="84.0" prefWidth="293.0" styleClass="card-title" stylesheets="@../css/base.css" text="Titre de la recette:" textAlignment="CENTER" wrapText="true" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
