@@ -76,11 +76,9 @@ public class MenuTextuel {
                     }
                     break;
                 case 5:
-                    List<Recepie> recipesUnder500Calories = recepieRepo.getRecipesWithLessThan500Calories();
+                    List<String> recipesUnder500Calories = recepieRepo.getRecipesWithLessThan500Calories();
                     System.out.println("\nRecettes avec moins de 500 calories :");
-                    for (Recepie recipe : recipesUnder500Calories) {
-                        System.out.println("\u001B[35m➤ " + recipe.getTitle()); // Utilisation de la couleur mauve et d'une flèche
-                    }
+                    recipesUnder500Calories.forEach(recipe -> System.out.println("\u001B[35m➤ " + recipe));
                     break;
                 case 6:
                     double sugarInZuppaInglese = recepieRepo.getSugarUsedInZuppaInglese();
@@ -101,22 +99,18 @@ public class MenuTextuel {
                     }
                     break;
                 case 9:
-                    List<Recepie> recipesWithoutButter = recepieRepo.getRecipesWithoutButter();
+                    List<String> recipesWithoutButter = recepieRepo.getRecipesWithoutButter();
                     System.out.println("\nRecettes sans beurre :");
-                    for (Recepie recipe : recipesWithoutButter) {
-                        System.out.println("\u001B[32m◆ " + recipe.getTitle()); // Utilisation de la couleur verte et d'un losange
-                    }
+                    recipesWithoutButter.forEach(recipe -> System.out.println("\u001B[32m◆ " + recipe));
                     break;
                 case 10:
-                    List<Recepie> recipesWithCommonIngredientsWithZuppaInglese = recepieRepo.getRecipesWithCommonIngredientsWithZuppaInglese();
+                    List<String> recipesWithCommonIngredientsWithZuppaInglese = recepieRepo.getRecipesWithCommonIngredientsWithZuppaInglese();
                     System.out.println("\nRecettes avec ingrédients communs avec Zuppa Inglese :");
-                    for (Recepie recipe : recipesWithCommonIngredientsWithZuppaInglese) {
-                        System.out.println("\u001B[33m★ " + recipe.getTitle()); // Utilisation de la couleur jaune et d'une étoile
-                    }
+                    recipesWithCommonIngredientsWithZuppaInglese.forEach(recipe -> System.out.println("\u001B[33m★ " + recipe));
                     break;
                 case 11:
-                    Recepie mostCaloricRecipe = recepieRepo.getMostCaloricRecipe();
-                    System.out.println("\nRecette la plus calorique : " + mostCaloricRecipe.getTitle());
+                    String mostCaloricRecipe = recepieRepo.getMostCaloricRecipe();
+                    System.out.println("\nRecette la plus calorique : " + mostCaloricRecipe);
                     break;
                 case 12:
                     String mostCommonUnit = recepieRepo.getMostCommonUnit();
@@ -129,24 +123,18 @@ public class MenuTextuel {
                         System.out.println("\u001B[31m◆ " + count); // Utilisation de la couleur rouge et d'un losange
                     }
                     break;
-                case 14:
-                    Recepie recipeWithMostFat = recepieRepo.getRecipeWithMostFat();
-                    System.out.println("\nRecette avec le plus de matière grasse : " + recipeWithMostFat.getTitle());
+                case 14, 17:
+                    String recipeWithMostFat = recepieRepo.getRecipeWithMostFat();
+                    System.out.println("\nRecette avec le plus de matière grasse : " + recipeWithMostFat);
                     break;
                 case 15:
                     String mostUsedIngredient = recepieRepo.getMostUsedIngredient();
                     System.out.println("\nIngrédient le plus utilisé : " + mostUsedIngredient);
                     break;
                 case 16:
-                    List<Recepie> recipesSortedByIngredientCount = recepieRepo.getRecipesSortedByNumberOfIngredients();
+                    List<String> recipesSortedByIngredientCount = recepieRepo.getRecipesSortedByNumberOfIngredients();
                     System.out.println("\nRecettes triées par nombre d'ingrédients :");
-                    for (Recepie recipe : recipesSortedByIngredientCount) {
-                        System.out.println("\u001B[32m■ " + recipe.getTitle());
-                    }
-                    break;
-                case 17:
-                    Recepie recipeWithMostFatContent = recepieRepo.getRecipeWithMostFat();
-                    System.out.println("\nRecette avec le plus de matière grasse : " + recipeWithMostFatContent.getTitle());
+                    recipesSortedByIngredientCount.forEach(recipe -> System.out.println("\u001B[32m■ " + recipe));
                     break;
                 case 18:
                     String mostUsedIngredientOverall = recepieRepo.getMostUsedIngredient();
@@ -167,8 +155,8 @@ public class MenuTextuel {
                     break;
 
                 case 21:
-                    Recepie easiestRecipe = recepieRepo.getEasiestRecipe();
-                    System.out.println("\nRecette la plus facile : " + easiestRecipe.getTitle());
+                    String easiestRecipe = recepieRepo.getEasiestRecipe();
+                    System.out.println("\nRecette la plus facile : " + easiestRecipe);
                     break;
                 case 0:
                     running = false;

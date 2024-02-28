@@ -74,8 +74,8 @@ public class RecepieRepo {
      * Retourner les recettes fournissant moins de 500 calories
      *
      */
-    public List<Recepie> getRecipesWithLessThan500Calories(){
-        return this.recipes.stream().filter(recepie -> recepie.getNutrition().getCalories() < 500).toList();
+    public List<String> getRecipesWithLessThan500Calories(){
+        return this.recipes.stream().filter(recepie -> recepie.getNutrition().getCalories() < 500).map(Recepie::getTitle).toList();
     }
 
     /**
@@ -102,16 +102,17 @@ public class RecepieRepo {
     /**
      * Retourner les recettes qui ne contiennent pas de beure
      */
-    public List<Recepie> getRecipesWithoutButter(){
-        return this.recipes.stream().filter(recepie -> recepie.getIngredients().stream().noneMatch(ingredient -> ingredient.getName().equals("butter"))).toList();
+    public List<String> getRecipesWithoutButter(){
+        return this.recipes.stream().filter(recepie -> recepie.getIngredients().stream().noneMatch(ingredient -> ingredient.getName().equals("butter"))).map(Recepie::getTitle).toList();
     }
 
     /**
      * Retourner les recettes ayant des ingrédients en communs avec la recette Zuppa Inglese
      *
      */
-    public List<Recepie> getRecipesWithCommonIngredientsWithZuppaInglese(){
-        return this.recipes.stream().filter(recepie -> hasCommonIngredients(recepie, this.recipes.stream().filter(recipe -> recipe.getTitle().equals("Zuppa Inglese")).flatMap(recipe -> recipe.getIngredients().stream()).toList())).toList();
+    public List<String> getRecipesWithCommonIngredientsWithZuppaInglese(){
+List<Ingredient> commonIngredients = this.recipes.stream().filter(recepie -> recepie.getTitle().equals("Zuppa Inglese")).flatMap(recepie -> recepie.getIngredients().stream()).toList();
+        return this.recipes.stream().filter(recepie -> hasCommonIngredients(recepie, commonIngredients)).map(Recepie::getTitle).toList();
     }
 
     /**
@@ -130,8 +131,8 @@ public class RecepieRepo {
     /**
      *  Afficher la recette la plus calorique
      */
-    public Recepie getMostCaloricRecipe(){
-        return this.recipes.stream().max((recipe1, recipe2) -> recipe1.getNutrition().getCalories() - recipe2.getNutrition().getCalories()).get();
+    public String getMostCaloricRecipe(){
+        return this.recipes.stream().max(Comparator.comparing(recepie -> recepie.getNutrition().getCalories())).map(Recepie::getTitle).orElse("No recipe found");
     }
 
     /**
@@ -162,10 +163,11 @@ public class RecepieRepo {
     /**
      * Retourne la recette comportant le plus de fat
      */
-    public Recepie getRecipeWithMostFat() {
+    public String getRecipeWithMostFat() {
         return recipes.stream()
                 .max(Comparator.comparing(recipe -> recipe.getNutrition().getFat()))
-                .orElse(null);
+                .map(Recepie::getTitle)
+                .orElse("No recipe found");
     }
 
     /**
@@ -186,9 +188,10 @@ public class RecepieRepo {
     /**
      * Afficher les recettes triées par nombre d’ingrédients
      */
-    public List<Recepie> getRecipesSortedByNumberOfIngredients() {
+    public List<String> getRecipesSortedByNumberOfIngredients() {
         return recipes.stream()
                 .sorted(Comparator.comparingInt(recipe -> recipe.getIngredients().size()))
+                .map(Recepie::getTitle)
                 .toList();
     }
 
@@ -231,10 +234,11 @@ public class RecepieRepo {
     /**
      * Calcule la recette la plus facile (avec le moins d’étape)
      */
-    public Recepie getEasiestRecipe() {
+    public String getEasiestRecipe() {
         return recipes.stream()
                 .min(Comparator.comparingInt(recipe -> recipe.getPreparationSteps().size()))
-                .orElse(null);
+                .map(Recepie::getTitle)
+                .orElse("No recipe found");
     }
 
 

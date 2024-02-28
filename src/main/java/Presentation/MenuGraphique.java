@@ -13,11 +13,13 @@ public class MenuGraphique extends Application{
         System.out.println();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("MenuGraphique.fxml")));
         primaryStage.setTitle("Menu");
-        //style
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));
         primaryStage.setMinWidth(900);
         primaryStage.setMinHeight(600);
+        primaryStage.setMaxWidth(900);
+        primaryStage.setMaxHeight(600);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
     public static void main(String[] args) {

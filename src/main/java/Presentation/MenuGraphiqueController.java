@@ -59,6 +59,15 @@ public class MenuGraphiqueController implements Initializable {
     }
 
     @FXML
+    void onClickNumberEggs(MouseEvent event) {
+        HBox eggbox = new HBox();
+        int nbEggs = recepieRepo.getTotalEggsUsed();
+        Label label = new Label("Nombre d'oeufs utilisés : " + nbEggs);
+        eggbox.getChildren().add(label);
+        content.setContent(eggbox);
+    }
+
+    @FXML
     void onclickMenu(MouseEvent event) {
         // TODO : Afficher ou masquer le menu
         if (sideMenu.getPrefWidth() >= 150) {

@@ -32,14 +32,6 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -53,7 +45,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="900.0" prefWidth="1134.0" style="-fx-min-width: 800;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MenuGraphiqueController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="900.0" prefWidth="1134.0" style="-fx-min-width: 800;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MenuGraphiqueController">
    <top>
       <HBox fx:id="titleContainer" prefHeight="41.0" prefWidth="800.0" styleClass="bg-white" stylesheets="@css/base.css" BorderPane.alignment="CENTER">
          <children>
@@ -84,7 +76,7 @@
       </HBox>
    </top>
    <left>
-      <VBox id="MenuContainer" fx:id="sideMenu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="300.0" styleClass="bg-white" stylesheets="@css/base.css" BorderPane.alignment="CENTER">
+      <VBox id="MenuContainer" fx:id="sideMenu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="269.0" styleClass="bg-white" stylesheets="@css/base.css" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
                <children>
@@ -132,321 +124,241 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <Accordion prefHeight="613.0" prefWidth="357.0" styleClass="bg-white" stylesheets="@css/base.css">
-              <panes>
-                <TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="350.0" prefWidth="357.0" styleClass="bg-white" stylesheets="@css/base.css" text="Informations générales sur les recettes">
-                  <content>
-                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="686.0" prefWidth="355.0">
-                           <children>
-                              <HBox layoutX="6.0" layoutY="150.0" prefHeight="41.0" prefWidth="268.0">
-                                 <children>
-                                    <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/sucre.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="45.0" prefWidth="234.0" text="Sucre dans Zuppa Inglese">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="2.0" layoutY="6.0" prefHeight="49.0" prefWidth="250.0">
-                                 <children>
-                                    <ImageView fitHeight="26.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/omelette.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="31.0" prefWidth="198.0" text=" Nombre  d’œufs total">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="2.0" layoutY="55.0" prefHeight="49.0" prefWidth="264.0">
-                                 <children>
-                                    <ImageView fitHeight="22.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/calories.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="35.0" prefWidth="198.0" text="Recettes &lt; 500 calories">
-                                       <HBox.margin>
-                                          <Insets left="25.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="2.0" layoutY="108.0" prefHeight="35.0" prefWidth="269.0">
-                                 <children>
-                                    <ImageView fitHeight="25.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/calculateur-de-calories.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="33.0" prefWidth="213.0" text="Recette la plus calorique">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="-2.0" layoutY="191.0" prefHeight="46.0" prefWidth="305.0">
-                                 <children>
-                                    <ImageView fitHeight="23.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/echelle-de-poids%20(1).png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="20.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="64.0" prefWidth="217.0" text="Unité la plus fréquente">
-                                       <HBox.margin>
-                                          <Insets left="25.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="-2.0" layoutY="237.0" prefHeight="46.0" prefWidth="305.0">
-                                 <children>
-                                    <ImageView fitHeight="23.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/pas.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="20.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="64.0" prefWidth="217.0" text="Répartition par étape">
-                                       <HBox.margin>
-                                          <Insets left="25.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="-2.0" layoutY="283.0" prefHeight="46.0" prefWidth="305.0">
-                                 <children>
-                                    <ImageView fitHeight="23.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/recette.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="20.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="64.0" prefWidth="217.0" text="Recette la plus facile">
-                                       <HBox.margin>
-                                          <Insets left="25.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" prefHeight="456.0" prefWidth="357.0" text=" Manipulation des ingrédients">
-                  <content>
-                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="532.0" prefWidth="355.0">
-                           <children>
-                              <HBox layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/huile-dolive.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="55.0" prefWidth="99.0" text="Huile d’olive">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="1.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/oeuf.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Nombre d’œufs par recette">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="1.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/ingredients.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Communs avec &quot;Zuppa Inglese&quot;">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="1.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/farine.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Nombre d’ingrédients par recette">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="4.0" layoutY="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="349.0" />
-                              <HBox layoutX="1.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/augmenter%20(1).png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Plus de fat">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="7.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/ingredients.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Ingrédient le plus utilisé">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="7.0" layoutY="306.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/farine.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Recettes triées par ingrédients">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="8.0" layoutY="354.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/recette.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Recettes par ingrédient">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="8.0" layoutY="402.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/infographie.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Premières étapes de &quot;Zuppa Inglese&quot;">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="8.0" layoutY="450.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="342.0">
-                                 <children>
-                                    <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/escaliers.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="10.0" top="10.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label prefHeight="48.0" prefWidth="279.0" text="Plus de 5 étapes">
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </TitledPane>
-              </panes>
-            </Accordion>
+            <HBox fx:id="menuRecette1" alignment="CENTER" onMouseClicked="#onClickNumberEggs" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Nombre total d'œufs utilisés" textAlignment="CENTER">
+                     <font>
+                        <Font name="Berlin Sans FB" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette2" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette3" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette4" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette5" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette6" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette7" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette8" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette9" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="menuRecette10" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/halo-halo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
          </children>
       </VBox>
    </left>
    <center>
-      <ScrollPane fx:id="content" prefHeight="491.0" prefWidth="558.0">
+      <ScrollPane fx:id="content" hbarPolicy="NEVER" prefHeight="491.0" prefWidth="558.0">
          <BorderPane.margin>
             <Insets top="50.0" />
          </BorderPane.margin>
