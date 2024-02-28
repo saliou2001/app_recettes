@@ -34,6 +34,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -45,7 +46,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="900.0" prefWidth="1134.0" style="-fx-min-width: 800;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MenuGraphiqueController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="900.0" style="-fx-min-width: 800;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MenuGraphiqueController">
    <top>
       <HBox fx:id="titleContainer" prefHeight="41.0" prefWidth="800.0" styleClass="bg-white" stylesheets="@css/base.css" BorderPane.alignment="CENTER">
          <children>
@@ -72,296 +73,526 @@
                   <InnerShadow />
                </effect>
             </Label>
+            <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#onClose" prefHeight="39.0" prefWidth="61.0" styleClass="btn-close" stylesheets="@css/base.css" text="X" />
          </children>
       </HBox>
    </top>
    <left>
-      <VBox id="MenuContainer" fx:id="sideMenu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="269.0" styleClass="bg-white" stylesheets="@css/base.css" BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+      <ScrollPane style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox id="MenuContainer" fx:id="sideMenu" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="857.0" prefWidth="269.0" styleClass="bg-white" stylesheets="@css/base.css">
                <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/house.png" />
-                     </image>
+                  <HBox alignment="CENTER" onMouseClicked="#onClickHome" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/house.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Accueil" textAlignment="CENTER">
+                           <font>
+                              <Font name="Tahoma" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Accueil" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
+                           <font>
+                              <Font name="Tahoma" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette1" alignment="CENTER" onMouseClicked="#onClickNumberEggs" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette1" alignment="CENTER" onMouseClicked="#onClickNumberEggs" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Nombre total d'œufs utilisés" textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Nombre total d'œufs utilisés" textAlignment="CENTER">
-                     <font>
-                        <Font name="Berlin Sans FB" size="13.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette2" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette11" alignment="CENTER" onMouseClicked="#onClickRecetteOil" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="recettes avec l'huile d'olive" textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette3" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette12" alignment="CENTER" onMouseClicked="#onClickEggsPerRecipe" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Nombre d’œufs par recette" textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette4" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette13" alignment="CENTER" onMouseClicked="#onClickInf" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" onMouseClicked="#onClickInf" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="avec moins de 500 calories" textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette5" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette14" alignment="CENTER" onMouseClicked="#onClickSucreZI" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" onMouseClicked="#onClickSucreZI" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Quantité de sucre dans Zuppa Inglese" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette6" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette15" alignment="CENTER" onMouseClicked="#onClickFirstTwoStepZI" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Premières deux étapes de Zuppa Inglese" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette7" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette151" alignment="CENTER" onMouseClicked="#onClickRecette5Step" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes avec plus de 5 étapes" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette8" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette152" alignment="CENTER" onMouseClicked="#onClickWithoutButter" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes sans beurre" textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette9" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette153" alignment="CENTER" onMouseClicked="#onClickNumberEggs" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes avec ingrédients communs avec Zuppa Inglese" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-            <HBox fx:id="menuRecette10" alignment="CENTER" onMouseClicked="#onClickRecette" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/halo-halo.png" />
-                     </image>
+                  </HBox>
+                  <HBox fx:id="menuRecette1531" alignment="CENTER" onMouseClicked="#onClickCalorique" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recette la plus calorique" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="141.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes" textAlignment="CENTER">
-                     <font>
-                        <Font name="Tahoma" size="20.0" />
-                     </font>
-                  </Label>
+                  </HBox>
+                  <HBox fx:id="menuRecette1532" alignment="CENTER" onMouseClicked="#onClickMostUnit" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Unité la plus fréquente" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="menuRecette1533" alignment="CENTER" onMouseClicked="#onClickIngredientPerRecepie" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Nombre d'ingrédients par recette" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="menuRecette15331" alignment="CENTER" onMouseClicked="#onClickFatRecepie" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recette avec le plus de matière grasse" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="menuRecette15332" alignment="CENTER" onMouseClicked="#onClickIngredientUsed" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Ingrédient le plus utilisé" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="menuRecette153321" alignment="CENTER" onMouseClicked="#onClickRecepieByIng" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes triées par nombre d'ingrédients" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="menuRecette153323" alignment="CENTER" onMouseClicked="#onClickIngredientUsed" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recettes triées par ingrédients" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="menuRecette153324" alignment="CENTER" onMouseClicked="#onClickIngredientList" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Liste des Recettes par ingrédients" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="menuRecette1533241" alignment="CENTER" onMouseClicked="#onClickRepartitionStep" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Répartition des recettes par étape de réalisation" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox fx:id="menuRecette1533242" alignment="CENTER" onMouseClicked="#onClickEasyRecipe" prefHeight="45.0" prefWidth="200.0" styleClass="menuItem" stylesheets="@css/base.css">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/halo-halo.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <HBox.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="150.0" styleClass="titleContainer" stylesheets="@css/base.css" text="Recette la plus facile" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
                </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </HBox>
-         </children>
-      </VBox>
+            </VBox>
+         </content>
+         <padding>
+            <Insets bottom="50.0" />
+         </padding>
+      </ScrollPane>
    </left>
    <center>
-      <ScrollPane fx:id="content" hbarPolicy="NEVER" prefHeight="491.0" prefWidth="558.0">
+      <ScrollPane fx:id="content" hbarPolicy="NEVER" prefHeight="491.0" prefWidth="558.0" style="-fx-background-color: white;" styleClass="bg-image" stylesheets="@css/base.css">
          <BorderPane.margin>
             <Insets top="50.0" />
          </BorderPane.margin>
+         <padding>
+            <Insets bottom="50.0" />
+         </padding>
+         <content>
+            <Pane fx:id="pan" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="491.0" prefWidth="558.0">
+               <children>
+                  <ImageView fx:id="bg" fitHeight="500.0" fitWidth="621.0" layoutY="-9.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@images/breakfast-2151201_1280.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btn" layoutX="218.0" layoutY="246.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onClickRecette" prefHeight="106.0" prefWidth="211.0" styleClass="btn-primary" stylesheets="@css/base.css" text="Consulter les recettes" />
+               </children>
+            </Pane>
+         </content>
       </ScrollPane>
    </center>
 </BorderPane>

@@ -9,21 +9,45 @@
 #MenuContainer{
 
 }
+.bg-image{
+    -fx-background-image: url("/images/bg.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.btn-primary{
+    -fx-background-color: #0f2be0;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #0f2be0;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.16), 10, 0, 0, 0);
+}
+.btn-close{
+    -fx-background-color: #ff0000;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #ff0000;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.16), 10, 0, 0, 0);
+}
 
 .menuItem:hover{
     -fx-background-color: #a49f9f;
 }
-/* display flex java fx*/
-.hbox{
-    -fx-spacing: 10;
-    -fx-alignment: center;
-}
+
 .card{
     -fx-border-width: 1;
     -fx-border-color: #0f2be0;
     -fx-border-radius: 10;
     -fx-background-color: #ffffff;
-    -fx-background-radius: 10;
+
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.16), 10, 0, 0, 0);
 }
 .card-image{

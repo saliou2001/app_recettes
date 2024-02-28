@@ -11,10 +11,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -198,25 +195,26 @@ List<Ingredient> commonIngredients = this.recipes.stream().filter(recepie -> rec
     /**
      * Afficher pour chaque ingrédient, les recettes qui l’utilisent
      */
-    public void getRecipesByIngredient() {
+    public List<String> getRecipesByIngredient() {
         Map<String, List<Recepie>> recipesByIngredient = recipes.stream()
                 .flatMap(recipe -> recipe.getIngredients().stream())
                 .collect(Collectors.groupingBy(Ingredient::getName, Collectors.mapping(ingredient -> recipes.stream()
                         .filter(recipe -> recipe.getIngredients().contains(ingredient))
                         .findFirst()
                         .orElse(null), Collectors.toList())));
+        System.out.println("methode");
+        return recipesByIngredient.entrySet().stream()
+                .map(entry -> entry.getKey() + " : " + entry.getValue().stream()
+                        .filter(Objects::nonNull)
+                        .map(Recepie::getTitle)
+                        .collect(Collectors.joining(", ")))
+                .toList();
 
-        recipesByIngredient.forEach((ingredient, ingredientRecipes) -> {
-            System.out.println(ingredient + " : " + ingredientRecipes.stream()
-                    .filter(recipe -> recipe != null)
-                    .map(Recepie::getTitle)
-                    .collect(Collectors.joining(", ")));
-        });
     }
 
     /**
      * Calculer la répartition des recettes par étape de réalisation (Combien de recette necessite une étape donnée)
-     * Retourne toutes les etapes de preparation associées à une recette
+     * Retourne toutes les nombres etapes de preparation associées à une recette
      */
     public Map<String , List<String>> getRecipesByPreparationStep() {
         // Merge all preparation that have the same recipe title
@@ -226,9 +224,7 @@ List<Ingredient> commonIngredients = this.recipes.stream().filter(recepie -> rec
                     mergedPreparation.addAll(preparation2);
                     return mergedPreparation;
                 }));
-        //        recipesByPreparationStep.forEach((title, preparationSteps) -> {
-        //            System.out.println(title + " : " + preparationSteps.stream().collect(Collectors.joining(", ")));
-        //        });
+
         return recipesByPreparationStep;
     }
     /**
@@ -282,9 +278,17 @@ List<Ingredient> commonIngredients = this.recipes.stream().filter(recepie -> rec
 
         NodeList preparationStepsList = recipeElement.getElementsByTagName("rcp:preparation");
 
-        for (int i = 0; i < preparationStepsList.getLength(); i++) {
-            preparationSteps.add(preparationStepsList.item(i).getTextContent());
+        for (int j = 0; j < preparationStepsList.getLength(); j++) {
+            Element preparationElement = (Element) preparationStepsList.item(j);
+            NodeList stepList = preparationElement.getElementsByTagName("rcp:step");
+            for (int k = 0; k < stepList.getLength(); k++) {
+                String stepText = stepList.item(k).getTextContent().trim();
+                if (!stepText.isEmpty()) {
+                    preparationSteps.add(stepText);
+            }
+}
         }
+
 
         NodeList commentsList = recipeElement.getElementsByTagName("rcp:comment");
         for (int i = 0; i < commentsList.getLength(); i++) {

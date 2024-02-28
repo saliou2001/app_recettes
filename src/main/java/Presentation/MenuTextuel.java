@@ -64,9 +64,7 @@ public class MenuTextuel {
                 case 3:
                     List<String> recipesWithOliveOil = recepieRepo.getRecipesUsingOliveOil();
                     System.out.println("\nListe des recettes utilisant l'huile d'olive :");
-                    for (String recipe : recipesWithOliveOil) {
-                        System.out.println("\u001B[35m➤ " + recipe); // Utilisation de la couleur mauve et d'une flèche
-                    }
+                    recipesWithOliveOil.forEach(recipe -> System.out.println("\u001B[35m➤ " + recipe));
                     break;
                 case 4:
                     List<String> eggsPerRecipe = recepieRepo.getEggsPerRecipe();
@@ -141,16 +139,17 @@ public class MenuTextuel {
                     System.out.println("\nIngrédient le plus utilisé dans toutes les recettes : " + mostUsedIngredientOverall);
                     break;
                 case 19:
-
-                    System.out.println("\nRecettes triées par ingrédients :");
-                    recepieRepo.getRecipesByIngredient();
+                    System.out.println("\nListe des Recettes par ingrédients :");
+                    recepieRepo.getRecipesByIngredient().forEach(title -> {
+                        System.out.println("\u001B[33m★ " + title); // Utilisation de la couleur jaune et d'une étoile
+                    });
                     break;
 
                 case 20:
                     Map<String, List<String>> recipesByStep = recepieRepo.getRecipesByPreparationStep();
                     System.out.println("\nRépartition des recettes par étape de réalisation :");
                     recipesByStep.forEach((title, preparationSteps) -> {
-                        System.out.println("\u001B[32m■ " + title + " : " + preparationSteps.size() + " étape(s)"); // Utilisation de la couleur verte et d'un carré
+                        System.out.println("\u001B[32m■ " + title + " : " + preparationSteps.size() + " étapes"); // Utilisation de la couleur verte et d'un carré
                     });
                     break;
 

@@ -13,7 +13,7 @@ public class MenuGraphique extends Application{
         System.out.println();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("MenuGraphique.fxml")));
         primaryStage.setTitle("Menu");
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));
         primaryStage.setMinWidth(900);
         primaryStage.setMinHeight(600);
