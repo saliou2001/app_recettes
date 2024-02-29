@@ -202,7 +202,7 @@ List<Ingredient> commonIngredients = this.recipes.stream().filter(recepie -> rec
                         .filter(recipe -> recipe.getIngredients().contains(ingredient))
                         .findFirst()
                         .orElse(null), Collectors.toList())));
-        System.out.println("methode");
+
         return recipesByIngredient.entrySet().stream()
                 .map(entry -> entry.getKey() + " : " + entry.getValue().stream()
                         .filter(Objects::nonNull)
@@ -227,6 +227,7 @@ List<Ingredient> commonIngredients = this.recipes.stream().filter(recepie -> rec
 
         return recipesByPreparationStep;
     }
+
     /**
      * Calcule la recette la plus facile (avec le moins d’étape)
      */

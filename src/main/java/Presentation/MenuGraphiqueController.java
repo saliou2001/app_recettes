@@ -8,10 +8,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -95,6 +97,7 @@ public class MenuGraphiqueController implements Initializable {
         // TODO : Afficher la liste des recettes dans un changement de scène
         GridPane gridPane = new GridPane();
         List<String> titreRecettes = this.recepieRepo.getRecipeTitles();
+        List<String> images = List.of("src/main/resources/images/beef.jpg","src/main/resources/images/rico-pi.jpg","src/main/resources/images/pescatoro.jpg","src/main/resources/images/zi.jpg","src/main/resources/images/cailleSarco.jpg");
         gridPane.setHgap(10);
         gridPane.setVgap(10);
         gridPane.setAlignment(javafx.geometry.Pos.CENTER);
@@ -104,6 +107,10 @@ public class MenuGraphiqueController implements Initializable {
             HBox hb = (HBox) cardTitre.getChildren().get(1);
             titreLabel = (Label) hb.getChildren().get(0);
             titreLabel.setText(titreRecettes.get(i));
+            HBox himg = (HBox) cardTitre.getChildren().get(0);
+            ImageView img = (ImageView) himg.getChildren().get(0);
+            Image image = new Image(new FileInputStream(images.get(i)));
+            img.setImage(image);
             gridPane.add(cardTitre, i % 2, i / 2);
         }
         content.setContent(gridPane);

@@ -13,7 +13,7 @@ public class Main {
         String yellowBold = "\u001B[1;33m";
         String purpleBold = "\u001B[1;35m";
         String greenBold = "\u001B[1;32m";
-        String star = "★";
+        String star = "🌟";
         Scanner scanner = new Scanner(System.in);
 
         // Texte "Bienvenue dans l'application"
@@ -24,10 +24,10 @@ public class Main {
         int espacesApres = longueurLigne - bienvenueTexte.length() - espacesAvant;
 
         // Affichage du texte centré avec des étoiles décoratives et des couleurs
-        System.out.println(cyanBold + "*".repeat(longueurLigne) + reset);
-        System.out.println(cyanBold + "*".repeat(espacesAvant) + yellowBold + bienvenueTexte + reset +
-                cyanBold + "*".repeat(espacesApres) + reset);
-        System.out.println(cyanBold + "*".repeat(longueurLigne) + reset);
+        System.out.println(cyanBold + "🌟".repeat(longueurLigne) + reset);
+        System.out.println(cyanBold + "🌟".repeat(espacesAvant) + yellowBold + bienvenueTexte + reset +
+                cyanBold + "🌟".repeat(espacesApres) + reset);
+        System.out.println(cyanBold + "🌟".repeat(longueurLigne) + reset);
 
         // Affichage du menu avec des couleurs pour chaque partie du texte
         System.out.println(yellowBold + greenBold + star + " " + cyanBold + "1. " + reset + yellowBold + "Menu Textuel" + reset +
