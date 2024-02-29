@@ -32,6 +32,14 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -46,7 +54,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="900.0" style="-fx-min-width: 800;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MenuGraphiqueController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="900.0" style="-fx-min-width: 800;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MenuGraphiqueController">
    <top>
       <HBox fx:id="titleContainer" prefHeight="41.0" prefWidth="800.0" styleClass="bg-white" stylesheets="@css/base.css" BorderPane.alignment="CENTER">
          <children>
@@ -132,7 +140,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/oeuf.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -155,7 +163,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/huile-dolive.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -178,7 +186,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/oeuf.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -201,7 +209,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/calories.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -224,7 +232,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/sucre.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -247,7 +255,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/infographie.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -270,7 +278,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/escaliers.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -293,7 +301,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/calories%20(1).png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -316,7 +324,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/ingredients.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -339,7 +347,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/farine.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -362,7 +370,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/instruction.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -385,7 +393,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/ingredients.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -408,7 +416,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/calculateur-de-calories.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -431,7 +439,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/augmenter%20(1).png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -477,7 +485,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/breakfast-2151201_1280.jpg" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -500,7 +508,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/ingredients.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -523,7 +531,7 @@
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/halo-halo.png" />
+                              <Image url="@images/pas.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />

@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -113,11 +114,13 @@ public class MenuGraphiqueController implements Initializable {
     @FXML
     void onClickNumberEggs(MouseEvent event) {
         HBox eggbox = new HBox();
+        eggbox.setPrefSize(558,491);
         int nbEggs = recepieRepo.getTotalEggsUsed();
         Label label = new Label("Nombre d'oeufs utilisés : " + nbEggs);
         eggbox.getChildren().add(label);
         content.setContent(eggbox);
     }
+
 
     @FXML
     void onClickRecetteOil(MouseEvent event) {
