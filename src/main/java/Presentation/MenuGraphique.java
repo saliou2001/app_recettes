@@ -6,13 +6,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.FileInputStream;
 import java.util.Objects;
 
 public class MenuGraphique extends Application{
     public void start(Stage primaryStage) throws Exception {
-        System.out.println();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("MenuGraphique.fxml")));
-        primaryStage.setTitle("Menu");
+        primaryStage.setTitle("Recette");
+        primaryStage.getIcons().add(new javafx.scene.image.Image(new FileInputStream("breakfast-2151201_1280.jpg")));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));
         primaryStage.setMinWidth(900);

@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class MenuTextuel {
 
     public static void main(String[] args) {
+        String[] arg = new String[0];
         RecepieRepo recepieRepo = new RecepieRepo();
         recepieRepo.init(); // Initialiser les données à partir du fichier XML
 

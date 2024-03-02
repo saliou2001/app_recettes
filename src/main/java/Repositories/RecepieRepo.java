@@ -241,7 +241,7 @@ List<Ingredient> commonIngredients = this.recipes.stream().filter(recepie -> rec
 
 
     public void init() {
-        String filePath = "data/recipes.xml";
+        String filePath = "recipes.xml";
         try {
             File xmlFile = new File(filePath);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
