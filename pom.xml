@@ -84,6 +84,21 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>Presentation.MenuGraphique</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

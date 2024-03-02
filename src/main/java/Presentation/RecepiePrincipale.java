@@ -1,11 +1,8 @@
-package AppTest;
-
-import Presentation.MenuGraphique;
-import Presentation.MenuTextuel;
+package Presentation;
 
 import java.util.Scanner;
 
-public class Main {
+public class RecepiePrincipale {
 
     public static void main(String[] args) {
         String reset = "\u001B[0m";
@@ -44,6 +41,9 @@ public class Main {
             case 2:
                 MenuGraphique.launch(MenuGraphique.class, args); // Appeler la classe MenuGraphique
                 break;
+                case 0:
+                    System.exit(0);
+                System.out.println("Au revoir !");
             default:
                 System.out.println("Choix invalide !");
         }

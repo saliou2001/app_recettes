@@ -57,7 +57,7 @@ public class MenuGraphiqueController implements Initializable {
         bg.setFitWidth(621);
         bg.setFitHeight(500);
         pan.getChildren().add(bg);
-        Button btn = new Button("Consulter les recettes");
+        Button btn = new Button("Consulter les recettes✅");
         btn.setPrefWidth(211);
         btn.setPrefHeight(106);
         btn.setLayoutX(218);
@@ -96,21 +96,24 @@ public class MenuGraphiqueController implements Initializable {
     void onClickRecette(MouseEvent event) throws IOException {
         // TODO : Afficher la liste des recettes dans un changement de scène
         GridPane gridPane = new GridPane();
+
+
         List<String> titreRecettes = this.recepieRepo.getRecipeTitles();
-        List<String> images = List.of("src/main/resources/images/beef.jpg","src/main/resources/images/rico-pi.jpg","src/main/resources/images/pescatoro.jpg","src/main/resources/images/zi.jpg","src/main/resources/images/cailleSarco.jpg");
+        List<String> images = List.of("beef.jpg","rico-pi.jpg","pescatoro.jpg","zi.jpg","cailleSarco.jpg");
         gridPane.setHgap(10);
         gridPane.setVgap(10);
         gridPane.setAlignment(javafx.geometry.Pos.CENTER);
         // TODO : Afficher les recettes en 3 colonnes
         for (int i = 0; i < titreRecettes.size(); i++) {
-            cardTitre = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("menu/CardTitreRecette.fxml")));
-            HBox hb = (HBox) cardTitre.getChildren().get(1);
-            titreLabel = (Label) hb.getChildren().get(0);
-            titreLabel.setText(titreRecettes.get(i));
-            HBox himg = (HBox) cardTitre.getChildren().get(0);
-            ImageView img = (ImageView) himg.getChildren().get(0);
+            VBox cardTitre = new VBox();
+            ImageView img = new ImageView();
             Image image = new Image(new FileInputStream(images.get(i)));
             img.setImage(image);
+            img.setFitWidth(200);
+            img.setFitHeight(200);
+            cardTitre.getChildren().add(img);
+            cardTitre.getChildren().add(new Label(titreRecettes.get(i)));
+            cardTitre.setStyle("-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-color: white; -fx-padding: 10px;");
             gridPane.add(cardTitre, i % 2, i / 2);
         }
         content.setContent(gridPane);
