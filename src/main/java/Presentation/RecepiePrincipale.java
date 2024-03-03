@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class RecepiePrincipale {
 
     public static void main(String[] args) {
-        String reset = "\u001B[0m";
+        String reset = "*";
         String cyanBold = "\u001B[1;36m";
         String yellowBold = "\u001B[1;33m";
         String purpleBold = "\u001B[1;35m";
@@ -21,10 +21,10 @@ public class RecepiePrincipale {
         int espacesApres = longueurLigne - bienvenueTexte.length() - espacesAvant;
 
         // Affichage du texte centré avec des étoiles décoratives et des couleurs
-        System.out.println(cyanBold + "🌟".repeat(longueurLigne) + reset);
-        System.out.println(cyanBold + "🌟".repeat(espacesAvant) + yellowBold + bienvenueTexte + reset +
-                cyanBold + "🌟".repeat(espacesApres) + reset);
-        System.out.println(cyanBold + "🌟".repeat(longueurLigne) + reset);
+        System.out.println(cyanBold + "*".repeat(longueurLigne) + reset);
+        System.out.println(cyanBold + "*".repeat(espacesAvant) + yellowBold + bienvenueTexte + reset +
+                cyanBold + "*".repeat(espacesApres) + reset);
+        System.out.println(cyanBold + "*".repeat(longueurLigne) + reset);
 
         // Affichage du menu avec des couleurs pour chaque partie du texte
         System.out.println(yellowBold + greenBold + star + " " + cyanBold + "1. " + reset + yellowBold + "Menu Textuel" + reset +
